@@ -1,0 +1,15 @@
+2024-02-24T19:34:13.694Z 0: 
+
+----------------------------------------------
+2024-02-24T19:34:13.703Z 1: Discord starting: {"releaseChannel":"stable","version":"0.0.43"}, modulepath: /home/shivansh/.config/discord/0.0.43/modules
+2024-02-24T19:34:13.710Z 2: ✅ webContents.created web1 ""
+2024-02-24T19:34:13.715Z 3: ✅ window.created win1 "discord"
+2024-02-24T19:34:13.917Z 4: ✅ webContents.did-finish-load web1
+2024-02-24T19:34:22.834Z 5: ✅ webContents.created web2 ""
+2024-02-24T19:34:22.841Z 6: ✅ window.created win2 "Discord"
+2024-02-24T19:34:24.479Z 7: ✅ webContents.did-finish-load web2
+2024-02-24T19:34:24.577Z 8: window.close win1
+2024-02-24T19:34:24.602Z 9: webContents.destroyed web1
+2024-02-24T19:34:24.605Z 10: window.closed win1
+2024-02-25T00:00:49.527Z 11: window.close win2
+2024-02-25T01:41:15.923Z 12: before-quit

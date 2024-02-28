@@ -1,0 +1,1 @@
+/home/shivansh/.cache/wal/launch_swaylock.sh

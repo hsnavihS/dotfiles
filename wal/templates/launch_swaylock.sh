@@ -1,0 +1,23 @@
+swaylock \
+	--screenshots \
+	--clock \
+	--indicator \
+	--indicator-radius 100 \
+	--indicator-thickness 7 \
+	--effect-blur 7x5 \
+	--effect-vignette 0.5:0.5 \
+	--ring-color \{foreground} \
+	--ring-clear-color \{foreground} \
+	--ring-ver-color \{foreground} \
+	--ring-wrong-color \{foreground} \
+	--key-hl-color \{background} \
+	--line-color \#00000000 \
+	--inside-color \#00000088 \
+	--inside-clear-color \#00000088 \
+	--inside-ver-color \#00000088 \
+	--inside-wrong-color \#00000088 \
+	--separator-color \#00000000 \
+	--text-color \{foreground} \
+	--text-clear-color \{foreground} \
+	--text-ver-color \{foreground} \
+	--text-wrong-color \{foreground} \

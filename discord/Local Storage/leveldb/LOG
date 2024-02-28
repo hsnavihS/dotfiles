@@ -1,0 +1,8 @@
+2024/02/25-01:04:13.662 463f4 Creating DB /home/shivansh/.config/discord/Local Storage/leveldb since it was missing.
+2024/02/25-01:04:13.671 463f4 Reusing MANIFEST /home/shivansh/.config/discord/Local Storage/leveldb/MANIFEST-000001
+2024/02/25-01:08:09.003 4641e Level-0 table #5: started
+2024/02/25-01:08:09.034 4641e Level-0 table #5: 2930057 bytes OK
+2024/02/25-01:08:09.040 4641e Delete type=0 #3
+2024/02/25-05:08:24.391 66d14 Level-0 table #7: started
+2024/02/25-05:08:24.442 66d14 Level-0 table #7: 2209259 bytes OK
+2024/02/25-05:08:24.448 66d14 Delete type=0 #4

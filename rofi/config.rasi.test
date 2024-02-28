@@ -1,0 +1,20 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+  display-drun: "Applications";
+  drun-display-format: "{name}";
+  // font: "JetBrainsMono Nerd Font Medium 10";
+  modi: "drun";
+  
+  // enabling the icons
+  show-icons: true;
+  hide-scrollbar: true;
+  icon-theme: "Papirus";
+}
+
+@theme "/dev/null"
+
+window {
+  width: 25%;
+  background-color: @background;
+}

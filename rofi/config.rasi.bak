@@ -1,0 +1,91 @@
+@import "~/.cache/wal/colors-rofi-dark"
+
+configuration {
+  display-drun: "Applications:";
+  drun-display-format: "{name}";
+  // font: "JetBrainsMono Nerd Font Medium 10";
+  modi: "drun";
+  
+  // enabling the icons
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+// because we defined the entire theme in this file,
+// this is null to avoid overlap with the default
+@theme "/dev/null"
+
+// universal throughout rofi
+* {
+  bg: #00000088;
+  bg-alt: #00000099;
+  bg-selected: #00000099;
+
+  fg: #cdd6f4;
+  fg-alt: #7f849c;
+
+  
+  border: 0;
+  margin: 0;
+  padding: 2;
+  spacing: 0;
+}
+
+window {
+  width: 25%;
+  background-color: @bg;
+}
+
+element {
+  padding: 8 12;
+  background-color: transparent;
+  text-color: @fg-alt;
+}
+
+element selected {
+  text-color: @fg;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+element-icon {
+  size: 14;
+  padding: 0 10 0 0;
+  background-color: transparent;
+}
+
+entry {
+  padding: 12;
+  background-color: @bg-alt;
+  text-color: @fg;
+}
+
+inputbar {
+  children: [prompt, entry];
+  background-color: @bg;
+}
+
+listview {
+  background-color: @bg;
+  columns: 1;
+  lines: 10;
+}
+
+mainbox {
+  children: [inputbar, listview];
+  background-color: @bg;
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+  background-color: @bg-alt;
+  text-color: @fg;
+}
+
+/* vim: ft=sass
