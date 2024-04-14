@@ -1,0 +1,158 @@
+{
+	"layer": "top", // Waybar at top layer
+		"position": "top", // Waybar position (top|bottom|left|right)
+
+		"height": 30, // Waybar height (to be removed for auto height)
+									// "spacing": 1, // Gaps between modules (4px)
+		"margin-bottom": 0,
+
+		// Choose the order of the modules
+
+		"modules-left": ["hyprland/workspaces"],
+		"modules-center": ["clock"],
+		"modules-right": ["bluetooth", "network", "pulseaudio", "battery", "cpu", "memory"],
+		// "modules-center": ["hyprland/window"],
+		// "modules-right": ["bluetooth", "network", "pulseaudio", "cpu", "memory", "battery", "clock"],
+
+		// Modules configuration
+
+		"custom/updates": {
+			"format": "  {}",
+			"tooltip-format": "{}",
+			"escape": true,
+			"return-type": "json",
+			"exec": "~/.config/scripts/updates.sh",
+			"restart-interval": 3600,
+			"tooltip": false
+		},
+
+		"hyprland/workspaces": {
+			"disable-scroll": true,
+			"all-outputs": true,
+			"active-only": false,
+			"persistent-workspaces": { "*": 5 },
+			"warp-on-scroll": false,
+			"format": "",
+			// "format": "{name}: {icon}",
+			"format-icons": {
+				"1": "",
+				"2": "",
+				// "3": "",
+				// "4": "",
+				// "5": "",
+				"urgent": "",
+				"focused": "",
+				"default": ""
+			}
+		},
+
+		"hyprland/window": {
+			"format": "{title}",
+			"max-length": 40,
+			"separate-outputs": true,
+			"rewrite": {
+				"(.*) - Google Chrome": "$1",
+				"shivansh@ibm5100:(.*)": "$1",
+				"rofi - Applications:": "Applications",
+				"(.*) - Thunar": "$1",
+			}
+		},
+
+		// Group Hardware
+		"group/hardware": {
+			"orientation": "inherit",
+			"drawer": {
+				"transition-duration": 300,
+				"children-class": "not-memory",
+				"transition-left-to-right": false
+			},        
+			"modules": [
+				"memory",
+			"battery",
+			"cpu",
+			]
+		},
+
+		"clock": {
+			// "timezone": "America/New_York",
+			"format": "{:%d %b | %A | %I:%M %p}",
+			"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+			"on-click": "while read; do dunstctl history-pop; done <<<$(dunstctl history|grep '\"id\" :')",
+		},
+
+		"cpu": {
+			"format": "  {usage}%",
+			"tooltip": false
+		},
+
+		"memory": {
+			"format": "  {}%"
+		},
+
+		"battery": {
+			"states": {
+				// "good": 95,
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{icon}  {capacity}%",
+			"format-charging": "{capacity}% ",
+			"format-plugged": "{capacity}% ",
+			"format-alt": "{time} {icon}",
+			// "format-good": "", // An empty format will hide the module
+			// "format-full": "",
+			"format-icons": ["", "", "", "", ""]
+		},
+
+		"network": {
+			// "interface": "wlp2*", // (Optional) To force the use of this interface
+			"format-wifi": "",
+			"format-ethernet": " {ipaddr}/{cidr}",
+			// "tooltip-format": "{ifname} via {gwaddr} ",
+			"tooltip-format": "{essid}",
+			"format-linked": "{ifname} (No IP) ",
+			"format-disconnected": "⚠",
+			// "format-alt": "{ifname}: {ipaddr}/{cidr}",
+			"on-click": "alacritty -e nmtui"
+		},
+
+		"pulseaudio": {
+			// "scroll-step": 1, // %, can be a float
+			// "format": "{icon} {volume}% {format_source}",
+			"format": "{icon}  {volume}%",
+			"format-bluetooth": "{volume}% {icon} {format_source}",
+			"format-bluetooth-muted": " {icon} {format_source}",
+			"format-muted": " {format_source}",
+			"format-source": "{volume}% ",
+			"format-source-muted": "",
+			"format-icons": {
+				"headphone": "",
+				"hands-free": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["", "", ""]
+			},
+			"on-click": "GTK_THEME=Adwaita:dark pavucontrol"
+		},
+
+		"bluetooth": {
+			"format-off": "",
+			"format-disabled": "",
+			"format-connected": " {device_alias}",
+			//"format": " {status}",
+			"format": "",
+			"interval": 30,
+			"on-click": "GTK_THEME=Adwaita:dark blueman-manager",
+			"on-click-right": "~/.config/scripts/toggle_bluetooth.sh"
+		}, 
+
+		"group/system": {
+			"orientation": "horizontal",
+			"modules": [
+				"memory",
+			"cpu"
+			]
+		},
+}
